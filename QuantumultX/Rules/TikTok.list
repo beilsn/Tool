@@ -1,6 +1,5 @@
 # TikTok by 可莉
-# 2024-04-29 23:31:09
-#AND,((NOT,((GEOIP,CN))),(HOST,pitaya.bytedance.com))
+# 2024-04-30 00:46:30
 HOST,api.snapkit.com,PROXY
 HOST,cocacola.co.jp,PROXY
 HOST,courses.snapsolve.com,PROXY
