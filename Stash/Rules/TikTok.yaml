@@ -1,8 +1,8 @@
 payload:
   # TikTok by 可莉
   # 2024-04-25 21:08:24
-  #AND,((NOT,((GEOIP,CN,no-resolve))),(DOMAIN,libra-sg.tiktokv.com))
-  #AND,((NOT,((GEOIP,CN,no-resolve))),(DOMAIN,pitaya.bytedance.com))
+  #AND,((NOT,((GEOIP,CN))),(DOMAIN,libra-sg.tiktokv.com))
+  #AND,((NOT,((GEOIP,CN))),(DOMAIN,pitaya.bytedance.com))
   - DOMAIN,api.snapkit.com
   - DOMAIN,cocacola.co.jp
   - DOMAIN,courses.snapsolve.com
