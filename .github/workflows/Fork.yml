@@ -1,4 +1,4 @@
-# 2024-05-01 18:30
+# 2024-05-02 07:30
 name: Fork & Edit
 
 on:
@@ -53,7 +53,6 @@ jobs:
         curl -L -o Tool-repo/Surge/Rules/YouTube.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
         curl -L -o Tool-repo/Surge/Rules/Google.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list"
         # 微软
-        curl -L -o Tool-repo/Surge/Rules/Copilot.list "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Copilot.list"
         curl -L -o Tool-repo/Surge/Rules/Github.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list"
         curl -L -o Tool-repo/Surge/Rules/OneDrive.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OneDrive.list"
         curl -L -o Tool-repo/Surge/Rules/Microsoft.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list"
@@ -239,7 +238,6 @@ jobs:
         curl -L -o Tool-repo/Clash/Rules/YouTube.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
         curl -L -o Tool-repo/Clash/Rules/Google.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list"
         # 微软
-        curl -L -o Tool-repo/Clash/Rules/Copilot.list "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Copilot.list"
         curl -L -o Tool-repo/Clash/Rules/Github.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list"
         curl -L -o Tool-repo/Clash/Rules/OneDrive.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OneDrive.list"
         curl -L -o Tool-repo/Clash/Rules/Microsoft.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list"
@@ -422,7 +420,6 @@ jobs:
         curl -L -o Tool-repo/QuantumultX/Rules/Google.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list"
         curl -L -o Tool-repo/QuantumultX/Rules/Github.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list"
         # 微软
-        curl -L -o Tool-repo/QuantumultX/Rules/Copilot.list "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Copilot.list"
         curl -L -o Tool-repo/QuantumultX/Rules/OneDrive.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OneDrive.list"
         curl -L -o Tool-repo/QuantumultX/Rules/Microsoft.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list"
         # 流媒体
@@ -527,7 +524,7 @@ jobs:
       run: |
         cd Tool-repo/QuantumultX/Rules
         for file in *.list; do
-          if [ "$file" != "OpenAI.list" ] && [ "$file" != "ChatGPT_Voice.list" ]; then
+          if [ -f "$file" ]; then
               sed -i '/^[[:space:]]*#/!s/\([^[:space:]]\)$/\1,PROXY/' "$file"
               if echo "$file" | grep -qE "(Ads_|AdGuardChinese|ConnersHua|Reject)"; then
                 sed -i 's/,PROXY/,REJECT/g' "$file"
@@ -567,7 +564,6 @@ jobs:
         curl -L -o Tool-repo/Loon/Rules/YouTube.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
         curl -L -o Tool-repo/Loon/Rules/Google.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list"
         # 微软
-        curl -L -o Tool-repo/Loon/Rules/Copilot.list "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Copilot.list"
         curl -L -o Tool-repo/Loon/Rules/Github.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list"
         curl -L -o Tool-repo/Loon/Rules/OneDrive.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OneDrive.list"
         curl -L -o Tool-repo/Loon/Rules/Microsoft.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list"
@@ -728,7 +724,6 @@ jobs:
         curl -L -o Tool-repo/Shadowrocket/Rules/YouTube.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
         curl -L -o Tool-repo/Shadowrocket/Rules/Google.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list"
         # 微软
-        curl -L -o Tool-repo/Shadowrocket/Rules/Copilot.list "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Copilot.list"
         curl -L -o Tool-repo/Shadowrocket/Rules/Github.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list"
         curl -L -o Tool-repo/Shadowrocket/Rules/OneDrive.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OneDrive.list"
         curl -L -o Tool-repo/Shadowrocket/Rules/Microsoft.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list"
@@ -869,7 +864,6 @@ jobs:
         curl -L -o Tool-repo/Stash/Rules/YouTube.yaml "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
         curl -L -o Tool-repo/Stash/Rules/Google.yaml "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list"
         # 微软
-        curl -L -o Tool-repo/Stash/Rules/Copilot.yaml "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Copilot.list"
         curl -L -o Tool-repo/Stash/Rules/Github.yaml "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list"
         curl -L -o Tool-repo/Stash/Rules/OneDrive.yaml "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OneDrive.list"
         curl -L -o Tool-repo/Stash/Rules/Microsoft.yaml "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list"
@@ -953,7 +947,6 @@ jobs:
         curl -L -o Tool-repo/Stash/Rules/YouTube.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
         curl -L -o Tool-repo/Stash/Rules/Google.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list"
         # 微软
-        curl -L -o Tool-repo/Stash/Rules/Copilot.list "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Copilot.list"
         curl -L -o Tool-repo/Stash/Rules/Github.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list"
         curl -L -o Tool-repo/Stash/Rules/OneDrive.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OneDrive.list"
         curl -L -o Tool-repo/Stash/Rules/Microsoft.list "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list"
@@ -1110,7 +1103,6 @@ jobs:
         curl -L -o Tool-repo/Egern/Rules/YouTube.yaml "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
         curl -L -o Tool-repo/Egern/Rules/Google.yaml "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list"
         # 微软
-        curl -L -o Tool-repo/Egern/Rules/Copilot.yaml "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Copilot.list"
         curl -L -o Tool-repo/Egern/Rules/Github.yaml "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Github.list"
         curl -L -o Tool-repo/Egern/Rules/OneDrive.yaml "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OneDrive.list"
         curl -L -o Tool-repo/Egern/Rules/Microsoft.yaml "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list"
