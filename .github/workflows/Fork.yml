@@ -93,7 +93,7 @@ jobs:
         curl -L -o Tool-repo/Surge/Rules/Ads_EasyListChina.list "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/rule/Surge/easylistchina_surge.list"
         curl -L -o Tool-repo/Surge/Rules/Ads_EasyListPrivacy.list "https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/rule/Surge/easyprivacy_surge.list"
         curl -L -o Tool-repo/Surge/Rules/Ads_Dlerio.list "https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Reject.list"
-        curl -L -o Tool-repo/Surge/Rules/Ads_AWAvenue.list "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge.txt"
+        curl -L -o Tool-repo/Surge/Rules/Ads_AWAvenue.list "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge.list"
         curl -L -o Tool-repo/Surge/Rules/AdGuardChinese.list "https://raw.githubusercontent.com/geekdada/surge-list/master/domain-set/chinese-filter.txt"
         # 自定义广告规则
         curl -L -o Tool-repo/Surge/Rules/Reject.list "https://raw.githubusercontent.com/Repcz/Tool/X/Surge/Customrules/Empty.list"
@@ -172,6 +172,7 @@ jobs:
           cat Tool-repo/Surge/Rules/Ads_ConnersHua.list >> Tool-repo/Surge/Rules/Reject.list
           cat Tool-repo/Surge/Rules/Hijacking_ConnersHua.list >> Tool-repo/Surge/Rules/Reject.list
           cat Tool-repo/Surge/Rules/Tracking_ConnersHua.list >> Tool-repo/Surge/Rules/Reject.list
+          cat Tool-repo/Surge/Rules/Ads_AWAvenue.list >> Tool-repo/Surge/Rules/Reject.list
         else
           echo "$file not found."
         fi
