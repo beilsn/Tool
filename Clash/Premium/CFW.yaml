@@ -63,7 +63,7 @@ i: &i {type: http, behavior: ipcidr, interval: 86400}
 ###结束
 
 proxy-providers:
-  Subscribe: {<<: *p, url: https://sub.xeton.dev/sub?target=clash&url=https://fast.lycorisrecoil.org/link/NwR8IFissoajNo2K?surge=1&list=true&udp=true}
+  Subscribe: {<<: *p, url: =https://fast.lycorisrecoil.org/link/NwR8IFissoajNo2K?surge=1&list=true&udp=true}
     # 可以使用任意类型的链接替换上面文字,多个链接使用英文符号的竖杠|隔开一起写上即可
     # Sub-Store生成的Gist链接(Clash类型),可以直接替换上述url引号中的部分,具体见Sub-Store教程         
                
